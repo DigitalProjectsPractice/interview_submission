@@ -1,0 +1,4 @@
+result,username,password
+success,student,Password123
+failure,student,wrongpassword
+empty,,
