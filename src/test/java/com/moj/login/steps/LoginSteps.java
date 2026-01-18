@@ -7,7 +7,9 @@ import com.moj.login.utils.LoginData;
 import com.moj.login.utils.ScreenshotUtil;
 import io.cucumber.java.Before;
 import io.cucumber.java.Scenario;
-import io.cucumber.java.en.*;
+import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
 import org.testng.Assert;
 import java.util.ArrayList;
 import java.util.List;
@@ -96,7 +98,7 @@ public class LoginSteps {
         String errorMsg = loginPage.getErrorMessage();
         scenarioContext.log("Error message found: " + errorMsg);
         boolean errorVisible = errorMsg != null && !errorMsg.isEmpty();
-        if (!errorVisible) {
+        if (errorVisible) {
             scenarioContext.log("Taking screenshot");
             ScreenshotUtil.takeScreenshot(scenarioContext, loginPage.getDriver());
         }
